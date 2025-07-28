@@ -26,7 +26,7 @@ func main() {
 	Nunca sabrás, querida, cuánto te amo.
 	Por favor, no me quites mi sol.`
 	bucketName := "tin-buckets-and-plates"
-	objectKey := "polly/streamed-output-neural-esp.mp3"
+	objectKey := "polly/streamed-output-neural-es.mp3"
 
 	// Load AWS config
 	cfg, err := config.LoadDefaultConfig(ctx)
@@ -41,9 +41,9 @@ func main() {
 	speechResp, err := pollyClient.SynthesizeSpeech(ctx, &polly.SynthesizeSpeechInput{
 		Text:         aws.String(textEsp),
 		OutputFormat: "mp3",
-		VoiceId:      "Joanna",
+		VoiceId:      "Lupe",
 		Engine:       "neural",
-		LanguageCode: "es-ES", // Spanish (Spain)
+		LanguageCode: "es-US", // Spanish (United States)
 	})
 	if err != nil {
 		log.Fatalf("failed to synthesize speech: %v", err)
